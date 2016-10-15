@@ -1,4 +1,4 @@
-filename=log
+filename=problemstatement
 
 pdf: ps
 	ps2pdf ${filename}.ps
