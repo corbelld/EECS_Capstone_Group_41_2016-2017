@@ -1,0 +1,45 @@
+Introduction:
+
+
+
+
+
+
+
+
+Timeline:
+
+
+
+
+
+
+
+
+
+Components:	- Relational Database
+		- Google Cloud Sql
+		- Twitter Bootstrap
+		- Templated Page Generation
+		- Web Statistics 
+		- Tree-Testing. Click Testing, Remote Usability Testing
+		- Android App Development
+		- Android Studions
+		- Hybrid Application
+
+
+
+
+
+
+Testing Components:
+
+
+
+
+
+
+
+
+
+Conclusion:
