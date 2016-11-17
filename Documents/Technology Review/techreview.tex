@@ -1,0 +1,504 @@
+\documentclass[letterpaper,10pt, draftclsnofoot,onecolumn]{IEEEtran}
+\usepackage[top=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{type1cm}
+\hypersetup{pdftex, colorlinks=true, linkcolor=black, citecolor=blue, filecolor=black, urlcolor=black, pdftitle=SYSTEMS AND SOFTWARE REQUIREMENTS SPECIFICATION (SSRS) TEMPLATE}
+\usepackage[pdftex]{graphicx}
+% Outline numbering
+\setcounter{secnumdepth}{5}
+
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+% Page layout (geometry)
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+% Footnote rule
+\setlength{\skip\footins}{0.0469in}
+
+
+
+
+
+
+
+
+
+% footnotes configuration
+\makeatletter
+\renewcommand\thefootnote{\arabic{footnote}}
+\makeatother
+\title {Technology Review }
+\author{Zixuan Feng
+	   Jason Ye
+	   David Corbelli }
+\date{October, 2016}
+\begin{document}
+
+\begin{flushleft}
+
+   
+        \Huge\textbf{Technology Review}\\
+        \vspace{1.9cm}
+        \large Sponsor \\
+      	\LARGE\textbf {Oregon State Department of Education}\\
+        \vspace{1.2cm}
+        \LARGE\textbf {Prepared by Capstone 41}\\
+        \vspace{1.9cm}
+    	\abstract{~The application and website for Oregon science is a guide for middle school and high school level students to learn about health science careers. 
+        Between an application and website, the service shall provide information as exploration tool for students looking for future careers in health science. 
+        Due to the many fields under the classification of health and science, it may be difficult for a student beginning to take an interest in the subject to find the proper path they're looking for.
+        As a development team we will focus on developing an exploratory website and then develop corresponding applications for Android OS. 
+        Through our platform, students will explore pathways and careers in health and science.}
+        
+\end{flushleft}
+
+
+\begin{flushleft}
+\clearpage{\selectlanguage{english}\bfseries\color{black}
+
+\par}
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Head page%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-1.5cm}
+\setcounter{tocdepth}{9}
+\renewcommand\contentsname{}
+\tableofcontents
+
+\clearpage{\selectlanguage{english}\color{black}
+
+
+\section[Introduction]{\selectlanguage{english}\color{black}
+Introduction}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{The purpose of this document is to further analyze the problems outlined by our project specifications and research and compare different solutions. 
+Decisions discussed within this document concern database types, web statistics and mobile operating system platforms, written by Jason Ye, database hosting, user-testing, and mobile operating system development, by Zixuan Feng, and styling framework, webpage generation, and styling framework, webpage generation, and mobile application type, by David Corbelli. 
+We have conducted research on possible technologies to implement as solutions to our anticipated problems and have selected those best-fit for our project.}
+ 
+
+
+%%%%%%%%%%%%%%%%%%%Introduction Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section[Database Type]{\selectlanguage{english}\color{black}
+Database Type}
+
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Before we begin implementing our project, we need to identify components and technologies that are beneficial to the project. 
+Since the project is mainly focus on website development, one of the main source of technology we will be using is a database, which it can stores and collects large number of information and data.
+Without a doubt, we need an organized database management system that allows user and database to design querying and administrating.
+As part of the research of finding the technology, one of the technological solutions to our problem is to have a database. 
+During our analyzing of the problem, we were figuring out a technology that could take in a lot of information and store them in the most efficient and easy way. 
+After a long research on different type of databases, we were given two options: relational databases and non-relational databases \cite{IEEEexample:article}. 
+Due to our team member’s skill sets, we decided to work with relational databases. 
+With relational databases, we can easily add, delete, update, search, sort and analyze data without having to search sequentially through the entire file.
+We will be using simple SQL query to search through the database and aim for comparison to other data purposes. 
+According to Jacqueline Homan, a software engineer writer for Pluralsight, she stated that “relational database uses MySQL, PostgreSQL and SQLite3 to store data in tables and rows efficiently”\cite{IEEEexample:article}. 
+For us to display the information on the website, we thought of applying relational algebra as our query language.
+Also Homan described that “they’re based on a branch of algebraic set theory known as relational algebra” \cite{IEEEexample:article}. 
+We assumed that our website would be extracting a lot of information; an application like relational database would be able to handle a lot of complicated querying and database transactions. 
+Thus, applying relational algebra which takes instance of relations as input and output is the best way to display information onto the website. 
+In addition, “if your application is going to focus on doing many database transactions, it is important that those transactions are processed reliably”. \cite{IEEEexample:article} 
+}
+
+\subsection[Relational Database]{\selectlanguage{english}\color{black}
+Relational Database}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{In addition to working with relational databases, an important aspect of referential integrity will be applied. 
+“Referential integrity is the concept in which multiple database tables share a relationship based on the data stored in the tables” \cite{IEEEexample:article1}. 
+Because the website contains valid information about health science career pathways, its database should be enforced with cascading actions of updating, adding and deleting data. 
+As long as we define the appropriate primary and foreign keys in the databases, we could use them to “enforce data integrity in SQL server tables” \cite{IEEEexample:article2}. 
+Suppose we wanted to delete inaccurate records related to health education.
+By applying referential integrity, we have the ability to remove it from the table and its relation to other tables without manually deleting them one by one. 
+Using referential integrity would be time effective for implementing and displaying information onto the website. 
+By enforcing referential integrity, we can take advantage of changing data in the tables with minimal headaches. 
+}
+
+
+
+\subsection[Non-Relational Database]{\selectlanguage{english}\color{black}
+Non-Relational Database}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{In non-relational databases, there are multiple disadvantages. 
+Developer would not have the ability to use joins like there would be in relational databases. 
+If we wanted to have multiple tables to have a relation with each others, we needed to perform multiple queries and join the data manually – and that can be very troublesome \cite{IEEEexample:article}. 
+In addition, non-relational does not treat operation as transaction the way relational database does. 
+Creating, verifying and committing databases must be done in order to have a proper transaction. 
+It is a very time-consuming process. 
+Overall, working with non-relational databases is unacceptable. 
+}
+
+
+\section[Database Hosting]{\selectlanguage{english}\color{black}
+Database Hosting}
+\noindent Our project is focusing website and application, database our priority tool for future updates. Choosing an effective, stable, cost-efficient platform for database is very important for us. We chose three most popular database platforms: Google Cloud Sql, MySql and Microsoft Sql Server. 
+
+\subsection[Google Cloud Sql]{\selectlanguage{english}\color{black}
+Google Cloud Sql}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{According to the book “Building Your Next Big Thing with Google Cloud Platform”\cite{IEEEexample:book3}, Google Cloud SQL is a cloud service, which has similarities with tradition database, and it is easy to generate with Google App Engine. 
+Google Cloud SQL is same as the Data Store, Google Company will maintain the server, programmer could use it without maintenance. 
+There are some features belong to the Google Cloud SQL, all the database will use it over the cloud. 
+As for convenience, it does not need programmer maintenance,Google will help programmers manage and maintain the data.
+It is trustworthy and high availability. All the data will stored in different database, and all the errors of database and machines will adjusted automatically. 
+Also, The Google Cloud SQL has compatible with JAVA and Python, which is same as the MySQL.
+What’s more, the Google Cloud SQL could have 100GB memory. As for Convenience, it could allow the programmer use the MysqlIDump import the database. 
+ Additionally, Google Cloud SQL could implied by the JDBC, which is based on the JAVA App Engine, and Python App engine application, All these environment are same as the MySQL.
+ Compared with MySQL and Microsoft SQL Server, it is the cheapest way to use, which could save the cost for client.
+}
+
+\subsection[MySql]{\selectlanguage{english}\color{black}
+MySql}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{MYSQL is one of the most popular relational database system. Which could imply by the FreeBSD, Linux, MAC and Windows system. 
+According to the book “ProMysql”\cite{IEEEexample:book4}There are some features belong to the MySQL, firstly, it could deal with large data, especially for some big company, like our cline, which is, belong with the government. 
+Secondly, we could use the most popular database language SQL. Thirdly, it is easy to install. Fourthly, it is easy to adjust, manage and optimize. 
+And then, the SQL server has all the popular functionality programmer could use, it is fast and trustworthy. There is the most important feature, MySQL server is in charge of client, it is a server system, which could support multithreading. 
+And it could also support different client’s programs and management tools. As for our client, since our client is government, so the trustworthy is the priority element.
+As for the representation of open source database service, the MySQL is the most popular tools, there are a lot big companies are using, like Facebook, Yahoo, and so on. All in all we could conclude the MySQL in three words: easy, effective and trustworthy. 
+}
+
+\subsection[Microsoft Sql Server]{\selectlanguage{english}\color{black}
+Microsoft Sql Server}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{As for the Microsoft SQL server is also a relational database system. It has convinces and high integration degree features.
+According to the book “Microsoft SQL Server 2012 Security Cookbook”\cite{IEEEexample:book5} Microsoft SQL Server is a comprehensive database platform; it integrated with BI tools and could provide the big company database management.
+According to the SQL Server 2016, and “national vulnerability database report”, Microsoft SQL has the least bugs compared with all other database hosting. What is more, Microsoft SQL Server could use the Visual studio to develop, which means various programmers could imply it in the same time. 
+Additionally, Microsoft SQL Server is related with Microsoft Office, they all have same user interface, which could be a easy way to let programmer train the future people to maintained the database in the future. As for the most current update, Microsoft SQL Server 2014, Microsoft did a lot change for the memory technology, which could support the storage index updates and it also use the newest LSI Nytro technolog to work with the SQL Server, which could reduce the delay and increase handling capacity and trustworthy. 
+In addition, it also combined with the Cloud technology, which means it could easily generate the Windows Azure
+}
+
+
+\section[Styling Framework]{\selectlanguage{english}\color{black}
+Styling Framework}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{For a website intended to assist middle and high school students in searching for a career path, implementing a visually attractive theme while maintaining an intuitive design is a decidedly important factor for this project. The frameworks considered as a solution include Twitter's Bootstrap framework, Zurb's Foundation, and Dave Gamache's Skeleton.}
+
+\subsection[Twitter Bootstrap]{\selectlanguage{english}\color{black}
+Twitter Bootstrap}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Twitter's Bootstrap framework provides HTML and CSS templates that allow for easy website customization. 
+This framework contains JavaScript plugins to provide interface elements, such as: button groups, navigational bars with dropdowns, progress bars and more\cite{website1}.
+Bootstrap is well documented providing examples, templates, and premade themes, allowing users to preview a variety of different page types. These include: cover pages, blogs, dashboard, and sign in pages, and navigation bars, all customizable by editing class tags. 
+Implementation of this framework requires either a free download or a link to the sources files and library hosted on GitHub. 
+It is documented in recent update history that the current version, 4.00-alpha, offers greater grid layout support; a key benefit in this project due to our mobile development intentions. 
+Bootstrap offers support for Chrome, Firefox, and Safari, as well as their respective mobile versions, and Internet Explorer 9.
+}
+
+\subsection[Zurb Foundation]{\selectlanguage{english}\color{black}
+Zurb Foundation}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Foundation by Zurb is noted to be similar to Bootstrap in many aspects, but has several distinguishing highlights. 
+Noteworthy differences include implementation for form validation through Abide, Zurb’s HTML5 form validation library, and a customizable grid, for greater control over page layout\cite{website1}.
+Foundation may also be implemented through a free-to-download library and is also hosted on GitHub for alternative access. 
+Since the latest update, this framework has experienced a 50\% reduction in size, refactored to optimize file size and modularity. 
+Foundation, however, offers support for fewer browsers than bootstrap, failing to support Chrome and Firefox for mobile OS. }
+
+\subsection[Skeleton]{\selectlanguage{english}\color{black}
+Skeleton}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Skeleton offers less features than the two previously discussed options while providing several similar functionality. 
+This framework offers similar grid layout support but lacks documentation that supports greater functionality for mobile browsers \cite{website2}.
+Skeleton’s homepage also states that only a handful of standard HTML elements may be styled through this framework, and thus may lead to complications once our website expands.
+The most recent update to the framework was in December 2014 and has remained unchanged since then. Skeleton is also hosted on GitHub, but also offers a free download. 
+This implementation, however, is based upon vanilla CSS and is thus a intended as a starting point for responsive websites.}
+ 
+\subsection[Verdict]{\selectlanguage{english}\color{black}
+Verdict}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Out of the three, Skeleton was deemed the least favorable due to the lack of support for mobile browsers as we intend to develop an application based upon a mobile implementation of the website. 
+While there exist many similarities between Bootstrap and Foundation, in research several reasons were discovered to prioritize one framework over the other.
+One of the most apparent is that Bootstrap is noted to create websites that look very much like they were styled using Bootstrap. 
+While the layouts and templates appear organized and sleek, they seem fairly recognizable; adding themes or custom styling seem to improve upon this aspect but it may take additional labor. 
+There is also documentation to support that Bootstrap’s components may be more suited to getting websites off the ground and adding a theme, compared to several additional labor required with Foundation’s components, albeit with several additional features. 
+In terms of performance, the differences were decidedly negligible.}
+
+\section[Webpage Generation]{\selectlanguage{english}\color{black}
+Webpage Generation}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{There are several ways to optimize the way webpages are generated; some favor time-efficiency, while others allow for greater control. Two implementations we have considered are hard-coding the information to webpages or using webpages templates to display information located within a database. }
+
+\subsection[Hard-Coded Webpages]{\selectlanguage{english}\color{black}
+Hard-Coded Webpages}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{One form of webpage generation we can pursue is hard-coding our information. 
+Rather than basing all of our webpages on a template and then populating those pages with the required information through a specifically designed form with input and output, we are also able to hand-write all of the page information ourselves while referencing the database or spreadsheet given to us by our client.
+While we lose time efficiency inputting and verifying all information ourselves, we are also given greater control over what tags are being used. 
+This will allow for greater control over styling should we not have standardized image sizes or if there is variance in the way we would like information to be displayed. 
+The largest drawback, however, is also presented in the necessity to tag each block of information individually and ensure each is given the necessary class to keep styling uniform.}
+
+\subsection[Template Based Generation]{\selectlanguage{english}\color{black}
+Template Based Generation}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Another form of webpage generation we have considered is template based webpage development.
+We are considering placing standard tags across our information-based webpages and then actively reading in all information from a database.
+The majority of this work will consist of developing the initial HTML or PHP files that will be used as our template.
+This implementation may help to standardize the look of all our webpages, but will require work in styling and scaling different parts of our website\cite{website3}.
+One of our options requires the use of JavaScript and Ajax to load in from the database each page actively as the user navigates the website; another option is to construct each webpage to individually query the same database with information specifically tied to the corresponding PHP or HTML file. 
+These are greater design choices to make while we develop navigation.}
+
+\subsection[Verdict]{\selectlanguage{english}\color{black}
+Verdict}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Due to the time constraints of hard-coding our information and tagging each block of displayed information individually, we have selected a template based page generation strategy. 
+Hard-coding also has the potential to raise problems as we move towards application development; keeping our tags standardized across all pages will help ensure the application’s scalability as the site is optimized for mobile devices. 
+We have yet to design our page layout and or precise template implementation, whether it be entirely based upon static webpages pre-generated for each page requiring database hosted information or live-updated pages utilizing JavaScript simplify the amount of page-linking required. 
+Though, the latter method may require more thought consideration pertaining to webpage search functionality. 
+Ultimately, this design choice leaves the most room for expansion. 
+After we pass off our website as a product to our client, maintenance is most easily conducted if we have a standardized method; a method most easily controlled through a standardized template.}
+
+\section[Web Statistics ]{\selectlanguage{english}\color{black}
+Web Statistics}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{For the purpose of maintaining the website, we wanted to implement a technology that will analyze the website statistics for trends and success level. 
+Simply a visualization tool kit that that we use to display the data in a meaningful way for client and programmer to see. 
+It is important to have a log file that measure the behavior of visitors and track details.
+Since the website will be used by the Oregon Education of Department, we need a tool that measures and qualifies aspect of the website.
+We have to make sure the website is being used in the most efficient and effective way. 
+To do so, we will be applying web statistic software from Google called the Google Analytics. 
+“Google Analytics lets you analyze data from all touch points in one place, for a deeper understanding of your customer experience” \cite{IEEEexample:article9}.
+Google Analytics offer the best features that benefit our website and mobile application.
+One of the best features Google Analytics offer is the learning what people are search for on the site. 
+Kristi Hines from Kissmetrics Blog stated that, “Site Search can help you determine if people are finding what they are looking for on your site” \cite{IEEEexample:article10}.
+The ability to visualize which page of the content need more specific information is very important. 
+It is crucial for us to know what is needed to be evaluated on the site’s content to ensure that visitors are finding what they want; Google Analytics is the perfect tool for us to use to analyze and optimize our website and mobile application. 
+}
+
+\subsection[Benefit of Using Web Statistics]{\selectlanguage{english}\color{black}
+Benefit of Using Web Statistics}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{According to an article by Karyn Greenstreet, the visitor information on the statistic map is important to keep track of the trend and traffic flow \cite{IEEEexample:article11}.
+Also, she stated that “the number of unique visitors will help you to determine whether your site is receiving more or less visitor each month” \cite{IEEEexample:article11}.
+It is important that our audience visit the website for the purpose of being useful and effective.
+If low detail of action shows on the statistic software, performance or technological issue may occur. 
+Greenstreet also mention that “another important distinction is the concept of ‘visitors’ versus ‘hits’” \cite{IEEEexample:article11}.
+Each person who visits our site is considered a “visitor” Greenstreet described.
+They are our target audiences that our website aims for. 
+We want visitors with a purpose to come on the website and spend productive time analyzing our information. 
+There is another important aspect in web statistics, and that is called pages. 
+“This section of your statistic will help you to determine which pages are visited most often, how long people stay on a page, and which page people exit your site from” Greenstreet stated \cite{IEEEexample:article11}.
+Based on the massive information that will be provided on the website, it is crucial to know which web page is more popular than others.
+Knowing that people spend 5 seconds on a page versus 3 minutes to read is important. 
+This can give the programmer the idea there may be certain page that is not useful than other pages. 
+Simply we could gather error reports to see where people had problems accessing or analyzing the site.  
+}
+
+\section[Testing]{\selectlanguage{english}\color{black}
+Testing}
+\noindent Due to our goal are website and applications, testing are very important. No matter website or applications, these three testing are necessary for our project. These three testing: tree testing, click testing and remote usability testing are requisite. 
+
+\subsection[Tree-Testing]{\selectlanguage{english}\color{black}
+Tree Testing}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{As for the testing method for website, tree testing is a usability tech to evaluate the website. According to the article “Solving Site Navigation Issues with Tree Testing” \cite{IEEEexample:article12}
+All the websites are based on the “trees”, which means all the websites have various main topics and subtopics, tree testing will provide an effective way to measure and evaluate how users could get the item what they want. 
+In the tree testing, it usually runs in a way, first is going to find a task, which means choose a item, and then it could shown as a text list as the priority level topic of the website. And then it will choose a topic, and shown a list of subtopics.
+And then continue to searching and choosing until find the specific topic. And it will do other tasks in that method.
+inally, when the tasks have been finished, it will complete the test, and the result will be analyzed. In this method, programmers could always use in paper ways and also could use some software to test, like optimal workshop.
+}
+
+\subsection[Click Testing]{\selectlanguage{english}\color{black}
+Click Testing}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Click testing is a basic testing method for website, it will test the users who would click on first on the interface to finish user’s task.
+According to the article “Getting The First Click Right” \cite{IEEEexample:article13}As the basic testing method, click test always be used as the priority method.
+The website will allow programmers to evaluate the linking structure of the website, which includes the navigation, and functionality, it could help the programmer test the user’s task around the website.
+As a method flow, first it will let the programmer choose a task, which need to focus on “where to”, “how to" and “where is”. 
+Secondly, programmer should know the correct path to complete the task. Thirdly, click the click in orders. Fifthly, record the time.
+Finial, conclude all the process, whether it could use the correct path to complete the task. Click-Testing is performed as the easiest method, which is the first test for all website development. All websites should be tested for Click testing. 
+}
+
+\subsection[Remote Usability Testing]{\selectlanguage{english}\color{black}
+Remote Usability Testing}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{In general, the remote usability testing has two different method, moderated remote testing and unmoderated remote testing.
+According to the website, “Unmoderated, Remote Usability Testing: Good or Evil?” \cite{IEEEexample:article14}All the testers will follow the programmers request and their own schedule to test the website and application. The entire testers have to record the test process, during the process, programmers should not disturb and any intervention. 
+As a suggestion, all the remote usability testing should be controlled in 15-30 minutes, which has 3-5 missions. 
+There are some disadvantages about the remote usability testing, firstly, it does not have interaction between testers and developers, if any errors happens in the process, tester do not know how to move to next stage.
+And the test environment are not controllable, tester could be disturbed by any environment elements, such as phone, or friends.
+Thirdly, programmer cannot tell the tester’s attitude, developer cannot tell whether the tester have the interest to test the website or applications, it will affect the result. 
+On the other hand, there are a lot advantages of remote usability testing, due to the current technology, developer could use the video conference to watch the tester to do the test.
+What is more, there are a lot tools could support the developer to do the test. 
+}
+ 
+\section[Mobile OS Platform]{\selectlanguage{english}\color{black}
+Mobile OS Platform}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Besides providing a website, we are requiring to develop a mobile application on a mobile operating system platform. 
+Due to our agreement with the client, the mobile application will be made in order for students, parents, teachers and counselors to explore health education career pathway; the application will be corresponded to the website.}
+
+
+\subsection[iOS]{\selectlanguage{english}\color{black}
+iOS}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Today Android and iOS platforms cover about 90 percent of the mobile market \cite{IEEEexample:article15}. 
+Because these two platforms are what people are using the most, it is obvious that we would be working with Android or iOS. 
+In Apple application development, creating the app using Xcode IDE with iOS SDK is a must \cite{IEEEexample:article15}.
+One specific programming language that most iOS developer uses is Swift \cite{IEEEexample:article16}.
+Swift is based on Objective-C which is apparently less prone to errors and more concise.
+Although Swift is a great language to use to create a mobile application, there is a limitation of running the application on mobile device.
+If we decided to create iOS app instead of an Android app, then the application can only be used on Apple smart phone.
+We wanted our project to be used on multiple phones and having variety usage is important for our customers. }
+
+\subsection[Android]{\selectlanguage{english}\color{black}
+Android}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{After contacting with our client, we were requested with the task of making an Android platform for our Mobile operating system.
+According to an article from Rishabh Software, it stated that “Android is an open source mobile operating system with massive user base and simplified mobile app development process” \cite{IEEEexample:article17}. 
+The reason we decided to develop Android over iOS was because it offers the best technology framework in the Android community.
+Its open source advantage from licensing and royalty free is far greater than iOS \cite{IEEEexample:article17}. 
+In addition, one of the Android’s benefits gives us the ability to interact with the community for updating content and expansions. Since our project focus on educational materials, it is important for developers to notify visitor about updates and maintenances. }
+
+\subsubsection[Integration]{\selectlanguage{english}\color{black}
+Integration}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{After contacting with our client, we were requested with the task of making an Android platform for our Mobile operating system.
+According to an article from Rishabh Software, it stated that “Android is an open source mobile operating system with massive user base and simplified mobile app development process” \cite{IEEEexample:article17}. 
+The reason we decided to develop Android over iOS was because it offers the best technology framework in the Android community.
+Its open source advantage from licensing and royalty free is far greater than iOS \cite{IEEEexample:article17}. 
+In addition, one of the Android’s benefits gives us the ability to interact with the community for updating content and expansions. 
+Since our project focus on educational materials, it is important for developers to notify visitor about updates and maintenances. }
+
+\subsubsection[Language Development]{\selectlanguage{english}\color{black}
+Language Development}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Finally, Android application is easy to adopt. 
+Its main language is scripted in Java with the help of rich set of libraries.
+Ben Jakuben from Treehouse stated that “it is recommended method to develop Android app is to use Java and the Android SDK” \cite{IEEEexample:article18}. 
+With the objective-oriented language such as Java, we are able to “manipulate data, collect input from users, and display things on the screen” \cite{IEEEexample:article18}. }
+
+\section[Mobile Application Type]{\selectlanguage{english}\color{black}
+Mobile Application}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Several options exist for developing applications for mobile devices. There exist options hosted both native, where data is stored within a user's device, web applications, where all information is hosted on a web server, and hybrid applications, dependent upon both local and hosted data.}
+
+\subsection[Native Application]{\selectlanguage{english}\color{black}
+Native Application}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{This type of application is designed specifically for a mobile operating system; in the scope of our project, Android and iOS. 
+One of the key benefits of this design choice is performance; writing the application in Objective-C or Swift for iOS or Java for Android allows for faster and more reliable performance than hoping that the mobile device’s web browser will handle a desktop site optimally\cite{website4}.
+Since the native app is built from the ground up, this implementation also ensures the user’s interaction with the app will feel natural and consistent to that of other applications. 
+One notable benefit is that users who download the application will have immediate accessibility; the application’s full functionality and information remain constantly available from a home screen icon.
+Unfortunately this implementation requires disk space and in the case of applications with greater functionality or requiring intensive data storage, the user may decide the application is not worth the keeping, resulting in a lost user. }
+
+\subsection[Web Application]{\selectlanguage{english}\color{black}
+Web Application}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{This implementation loads within a mobile browser, such as Chrome, Safari, or Firefox, and may often to be referred to as a mobile website. 
+Web apps are typically programmed using HTML5, Javascript, and CSS and thus, typically lack a standard development kit.
+Since the application’s features and performance are bounded by the capabilities of the web browser, users will typically require an internet connection, design may be less intuitive, and the implementation may not behave like a native application\cite{website5}. 
+Other downsides include the difficulty to maintain a user base as the easiest access to your site will be through a bookmark; not an icon on their device’s home screen. 
+However, one of the benefits of loading an application through the browser is that no disk space is required.
+}
+
+\subsection[Hybrid Application]{\selectlanguage{english}\color{black}
+Hybrid Application}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{Hybrid applications, however, combine the best of the two implementations. 
+One of the key features of hybrid apps is cross compatibility. Since the majority of the information is hosted online, only certain portions of the code must be re-written to allow functionality across different devices. 
+With certain software development kits, such as Phone gap, Accelerator, and Android Studios, it is possible to design the app across HTML, CSS, and JavaScript files as though they were websites and then wrap them into an application\cite{website5}.
+Several drawbacks to note are first, the hybrid app will not run as fast as a native app as performance is partially dependent on browser speed, and second, additional functionality may require additional coding for each platform.}
+
+\subsection[Verdict]{\selectlanguage{english}\color{black}
+Verdict}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{ Our project’s implementation is meant to include a desktop website, mobile website, as well as a mobile application.
+Our devised workflow will begin with developing website navigation and functionality; we will then move on to porting these features to a mobile version of the website.
+Since we will have already built a mobile website, it will be most efficient to create a hybrid application to account for our mobile application.
+This will allow us to fulfill our requirements while reusing most of our code.
+While both the mobile site and hybrid application will have similar functionality, developing both will allow for additional accessibility. 
+}
+
+\section[Mobile OS Development]{\selectlanguage{english}\color{black}
+Mobile OS Development}
+\noindent As our second goal of our project, we need to develop applications for Android and IOS. To find a efficient and convenient way to develop application will help us to develop better applications. Currently, these three platform could allow us only use one of them could develop application for both systems although some of them still have disadvantage.
+
+\subsection[Android Studios]{\selectlanguage{english}\color{black}
+Android Studios}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{As for the request of Cline, we need to create applications; android studio is a tool to develop the application. Android Studio is based on the Intelligent IDEA, which is same as the Eclipse Adt, Based on the idea of the application, it has various advantages for Android application. 
+According to the book “Android Studio 2 Development Essentials” \cite{IEEEexample:book22}First, it has the reconstruction of the exclusive and quick fixes. Some tool tips will mention and hint the developer the usability and compatibility. 
+What is more, the functionality of Android Studio will allow the developer combine the functionality with UI.
+Due to the current Android Studios, it also support the C++ to develop the application, which gives programmers an easier way to debugging and develop the application.
+}
+
+\subsection[Corona]{\selectlanguage{english}\color{black}
+Corona}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{As for another main current mobile application development tool, Corona is another easy and convenient application for application developers.
+According to the book “Corona SDK Application Design” \cite{IEEEexample:book23} First of all, stabilization is the most significant feature. Secondly, it also supports the hardware acceleration, GPS, compass and cameras. 
+But the Corona need a special language, called LUA, but it is easy to learn and use.
+As for us, we are going to develop the two main platform applications IOS and Android, so Corona is a convenient tool to develop the IOS and Android.
+On the other hand, there are a lot bugs when developers develop the Android applications. 
+And then, it has to upload the code into the server, programmers cannot compile locality. In a word, even Corona is one of the most popular platform to develop the application, but it has some disadvantages programmers should not ignore, especially for the Android application bugs, programmer should pay attention at.
+}
+
+\subsection[Appcelerator Titanium]{\selectlanguage{english}\color{black}
+Appcelerator Titanium}
+{\selectlanguage{english}\color{black}\normalsize\noindent
+{For our team, we are a new team for developing the mobile application. Currently, the Titanium is one of the easiest way let “new” programmers to develop applications. 
+According to the book “Accelerator Titanium Smart phone App Development Cookbook” \cite{IEEEexample:book24}, Because it could let programmers use the HTML, JavaScript and CSS, also it could applied by the Python Ruby and PHP.
+This platform is tool could combine let the programmer combine the UI and web.
+For us, the website is our priority goal for the project, CSS and HTML are two major tools for us, we could also use these two language to develop the applications as well. Programmers could use the same language to develop two applications, IOS and Android. 
+}
+
+\section[Conclusion]{\selectlanguage{english}\color{black}
+Conclusion}
+\noindent Post-research, the design choices we have made will affect our database, website design, mobile site, and mobile application implementations. The decisions discussed within this document will be referenced as we continue development on our project.  
+
+\newpage
+    \nocite{*}
+    \bibliographystyle{IEEEtran}
+    \bibliography{IEEEabrv,References}
+
+
+
+ \clearpage\setcounter{page}{1}
+
+
+\bigskip
+
+{\centering\selectlanguage{english}\color{black}
+Technology Review
+\par}
+
+
+\bigskip
+
+{\centering\selectlanguage{english}\bfseries\color{black}
+Version 1.0, 2016-11-14
+\par}
+
+
+ \vspace{2cm}
+\noindent 
+Zixuan Feng \\
+Email: fengzi@oregonstate.edu\\
+Address: 1148 Kelley Engineering Center, 2500 NW Monroe Ave, Corvallis, OR 97331\\
+
+
+ \vspace{1cm}
+\noindent 
+Jason Ye \\
+Email:yeja@oregonstate.edu\\
+Address: 1148 Kelley Engineering Center, 2500 NW Monroe Ave, Corvallis, OR 97331\\
+
+
+ \vspace{1cm}
+\noindent 
+David Corbelli \\
+Email:Corbelld@oregonstate.edu\\
+Address: 1148 Kelley Engineering Center, 2500 NW Monroe Ave, Corvallis, OR 97331\\
+
+
+\end{document}
