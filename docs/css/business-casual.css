@@ -33,7 +33,7 @@ p {
 
 hr {
     max-width: 400px;
-    border-color: #999999;
+    border-color: #d9d9d9;;
 }
 
 .brand,
@@ -157,7 +157,7 @@ footer p {
         color: #fff;
         border-bottom-width: 0.5px;
         border-bottom-style:solid;
-        border-bottom-color:black;
+        border-bottom-color:#d9d9d9;;
     }
 
     .navbar {
