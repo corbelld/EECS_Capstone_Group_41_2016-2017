@@ -28,7 +28,7 @@ h6 {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #ff0000;
 }
 
 hr {
@@ -79,8 +79,8 @@ hr {
 
 .box {
     margin-bottom: 20px;
-    padding:15px;
-    background: red;
+    padding: 15px 0px 0px 0px;
+    background: #fff;
     background: rgba(255,255,255,0.9);
 }
 
@@ -103,7 +103,7 @@ hr {
 }
 
 footer {
-    background: #fff;
+    background: black
     background: rgba(255,255,255,0.9);
 }
 
