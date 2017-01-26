@@ -4335,9 +4335,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     width: auto;
     margin-top: 0;
     background-color: transparent;
-    border: 0;
+    border: 1px;
     -webkit-box-shadow: none;
             box-shadow: none;
+
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {

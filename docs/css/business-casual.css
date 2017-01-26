@@ -6,7 +6,7 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('../img/bg.jpg') no-repeat center center fixed;
+    background: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -41,16 +41,24 @@ hr {
     display: none;
 }
 
+.containder{
+    border-bottom:2px, solid, black;
+}
 .navbar-brand {
+
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 2px;
+
+
 }
 
 .navbar-nav {
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
+    border-color:black;
+
 }
 
 .img-full {
@@ -119,11 +127,11 @@ footer p {
         padding: 30px 0 10px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 5em;
         font-weight: 700;
+        font-family: "Times New Roman", Times, serif;
         line-height: normal;
-        color: #fff;
+        color: #00004d;
     }
 
     .top-divider {
@@ -144,8 +152,12 @@ footer p {
         text-transform: uppercase;
         font-size: 1.25em;
         font-weight: 400;
+        font-style: normal;
         letter-spacing: 3px;
         color: #fff;
+        border-bottom-width: 0.5px;
+        border-bottom-style:solid;
+        border-bottom-color:black;
     }
 
     .navbar {
@@ -166,12 +178,14 @@ footer p {
         background: rgba(255,255,255,0.9);
     }
 
+
     .nav>li>a {
         padding: 35px;
     }
 
     .navbar-nav>li>a {
         line-height: normal;
+       
     }
 
     .navbar-nav {
@@ -180,6 +194,7 @@ footer p {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+        
     }
 }
 
