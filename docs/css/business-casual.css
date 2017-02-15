@@ -6,7 +6,7 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: white;
+    background: #E0E0E0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -62,7 +62,9 @@ hr {
 }
 
 .img-full {
-    min-width: 100%;
+    
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .brand-before,
@@ -131,7 +133,7 @@ footer p {
         font-weight: 700;
         font-family: "Times New Roman", Times, serif;
         line-height: normal;
-        color: #00004d;
+        color: #404040;
     }
 
     .top-divider {
@@ -206,3 +208,4 @@ footer p {
         clear: both;
     }
 }
+
