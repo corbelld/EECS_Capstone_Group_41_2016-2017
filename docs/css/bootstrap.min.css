@@ -2,10 +2,19 @@
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{
-display:inline-block;vertical-align:baseline}
+ *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html{font-family:sans-serif;
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
+audio,canvas,progress,video{
+display:inline-block;vertical-align:baseline
+}
+
 audio:not([controls]){
-display:none;height:0}
+display:none;height:0
+}
+
 [hidden],template{
 display:none}
 a{
@@ -31,6 +40,14 @@ color:#000;background:#ff0}
 small{
 font-size:80%}
 
+.par{
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+div
 sub,sup{
 position:relative;font-size:75%;line-height:0;vertical-align:baseline}
 
@@ -971,10 +988,13 @@ button,input,select,textarea{
 font-family:inherit;font-size:inherit;line-height:inherit}
 
 a{
-color:#337ab7;text-decoration:none}
+color:rgb(117, 120, 123);
+text-decoration:none}
 
 a:focus,a:hover{
-color:#23527c;text-decoration:underline}
+color:#ddd;
+text-decoration:underline;
+}
 
 a:focus{
 outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
@@ -1242,6 +1262,16 @@ max-height:340px;overflow-y:scroll}
 
 .container{
 padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+
+.footer-container{
+    padding:25px;
+}
+
+.menu-items{
+    padding: 0 10px;
+    color:rgb(117, 120, 123);
+    float:left;
+}
 
 @media (min-width:95%){
 .container{
@@ -1912,6 +1942,10 @@ margin-left:0
 @media (min-width:1200px){
 .col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9{
 float:left
+}
+
+.footer-col-left{
+    width:100%;
 }
 
 .col-lg-12{
@@ -3293,8 +3327,9 @@ position:relative;display:block
 position:relative;display:block;padding:10px 15px
 }
 
+/*changed background-color*/
 .nav>li>a:focus,.nav>li>a:hover{
-text-decoration:none;background-color:#eee
+text-decoration:none;background-color:transparent;
 }
 
 .nav>li.disabled>a{
@@ -3657,11 +3692,9 @@ float:left;margin:0
 .navbar-nav>li{
 float:left
 }
-
 .navbar-nav>li>a{
 padding-top:15px;padding-bottom:15px
 }
-
 
 }
 
@@ -5146,7 +5179,10 @@ right:1px;bottom:-10px;content:" ";border-right-width:0;border-left-color:#fff
 }
 
 .carousel{
-position:relative
+position:relative;
+width:60%;
+margin-left:auto;
+margin-right:auto;
 }
 
 .carousel-inner{
@@ -5218,11 +5254,25 @@ position:absolute;top:0;bottom:0;left:0;width:15%;font-size:20px;color:#fff;text
 }
 
 .carousel-control.left{
-background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);background-repeat:repeat-x
+
+background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(252,252,252) 100%);
+background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(252,252,252) 100%);
+background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(252,252,252)));
+background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(252,252,252) 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+background-repeat:repeat-x
 }
 
 .carousel-control.right{
-right:0;left:auto;background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);background-repeat:repeat-x
+
+right:0;
+left:auto;
+background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(252,252,252) 100%);
+background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(252,252,252) 100%);
+background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(252,252,252)));
+background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(252,252,252) 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+background-repeat:repeat-x
 }
 
 .carousel-control:focus,.carousel-control:hover{

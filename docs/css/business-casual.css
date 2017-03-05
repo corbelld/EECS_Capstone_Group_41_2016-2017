@@ -113,8 +113,9 @@ hr {
 }
 
 footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    /*background: #fff;*/
+    background: #333;
+    color:rgb(117, 120, 123);
 }
 
 footer p {
@@ -198,6 +199,21 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
         
+    }
+    /*added classes*/
+    .footer-navbar-left {
+        display: table;
+        float: left;
+        margin: 0 auto;
+        table-layout: fixed;
+        padding:initial;
+    }
+     .footer-col-right {
+        display: table;
+        float: right;
+        margin: 0 auto;
+        table-layout: fixed;
+        padding-top:10px;
     }
 }
 
