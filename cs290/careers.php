@@ -118,7 +118,7 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting">Description</th>
+							<th class="disable-sorting" align="text-center" style="width:90%">Description</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -146,7 +146,7 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting">Description</th>
+							<th alien="right" style="width:90%">Description</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -173,7 +173,7 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting">Description</th>
+							<th class="disable-sorting" style="width:90%">Description</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -200,7 +200,7 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting">Description</th>
+							<th class="disable-sorting" style="width:90%">Description</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -227,7 +227,7 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting">Description</th>
+							<th class="disable-sorting" style="width:90%">Description</th>
 						</tr>
 					</thead>
                 <tbody>
