@@ -44,7 +44,7 @@
 
 <body>
 
-    <div class="brand">Oregon Health Science Careers</div>
+    <div class="brand"> <img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -112,13 +112,15 @@
                     <!-- begin php section for career information query -->
 					
 				<!-- Healthcare Table -->	
-				<div id="healthcare">
-				<table class="table table-hover" id="healthcare" >
-					<caption><h4>Health Care</h4></caption>
+				<h4>Health Care</h4>
+				<div id="healthcare" class="table-responsive">
+				
+				<table class="table table-hover" >
+					<!--<caption><h4>Health Care</h4></caption> -->
 					<thead>
 						<tr>
-							<th>Careers</th>
-							<th class="disable-sorting" style="width:90%">Description</th>
+							<th style="padding-right: 150px">Careers</th>
+							<th class="disable-sorting"  >Description</th>
 							<th>Education</th>
 						</tr>
 					</thead>
@@ -143,120 +145,128 @@
 				</div>	
 				
 				<!-- Professional Related -->	
-				<table class="table table-hover" id="professional" >
-					<caption><h4>Professional and Related</h4></caption>
-					<thead>
-						<tr>
-							<th>Careers</th>
-							<th class="disable-sorting" style="width:90%">Description</th>
-							<th>Education</th>
-						</tr>
-					</thead>
-                <tbody>
-				<?php	
-						$query = "SELECT * FROM Careers C WHERE C.category = 'Professional and Related'";
-						$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
-						if(!$result){
-							die('Coult not');
-						}
-						
-						while($row = mysqli_fetch_array($result)){
-							echo "<tr>";
-							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
-							echo "<td>".$row['bodyText']."</td>";
-							echo "<td>".$row['entryEdu']."</td>";
-							echo "</tr>";
-						}
-				?>
-                </tbody>
-				</table>		
-					
+				<div id="professional" class="table-responsive">
+					<table class="table table-hover">
+						<caption><h4>Professional and Related</h4></caption>
+						<thead>
+							<tr>
+								<th style="padding-right: 150px">Careers</th>
+								<th class="disable-sorting"  >Description</th>
+								<th>Education</th>
+							</tr>
+						</thead>
+					<tbody>
+					<?php	
+							$query = "SELECT * FROM Careers C WHERE C.category = 'Professional and Related'";
+							$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
+							if(!$result){
+								die('Coult not');
+							}
+							
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+								echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
+								echo "<td>".$row['bodyText']."</td>";
+								echo "<td>".$row['entryEdu']."</td>";
+								echo "</tr>";
+							}
+					?>
+					</tbody>
+					</table>		
+				</div>
+				
 				<!-- Management -->	
-				<table class="table table-hover" id="management" style="width:100%">
-					<caption><h4>Management</h4></caption>
-					<thead>
-						<tr>
-							<th>Careers</th>
-							<th class="disable-sorting" style="width:90%">Description</th>
-							<th>Education</th>
-						</tr>
-					</thead>
-                <tbody>
-				<?php	
-						$query = "SELECT * FROM Careers C WHERE C.category = 'Management'";
-						$result = mysqli_query($mysql_handle, $query) or die("Result die");
-						if(!$result){
-							die('Coult not');
-						}
-						
-						while($row = mysqli_fetch_array($result)){
-							echo "<tr>";
-							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
-							echo "<td>".$row['bodyText']."</td>";
-							echo "<td>".$row['entryEdu']."</td>";
-							echo "</tr>";
-						}
-				?>
-                </tbody>
-				</table>	
+				<div id="management" class="table-responsive">
+					<table class="table table-hover" style="width:100%">
+						<caption><h4>Management</h4></caption>
+						<thead>
+							<tr>
+								<th style="padding-right: 150px">Careers</th>
+								<th class="disable-sorting"  >Description</th>
+								<th>Education</th>
+							</tr>
+						</thead>
+					<tbody>
+					<?php	
+							$query = "SELECT * FROM Careers C WHERE C.category = 'Management'";
+							$result = mysqli_query($mysql_handle, $query) or die("Result die");
+							if(!$result){
+								die('Coult not');
+							}
+							
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+								echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
+								echo "<td>".$row['bodyText']."</td>";
+								echo "<td>".$row['entryEdu']."</td>";
+								echo "</tr>";
+							}
+					?>
+					</tbody>
+					</table>	
+				</div>
 					
 				<!-- Service Table -->	
-				<table class="table table-hover" id="service" style="width:100%">
-					<caption><h4>Service</h4></caption>
-					<thead>
-						<tr>
-							<th>Careers</th>
-							<th class="disable-sorting" style="width:90%">Description</th>
-							<th>Education</th>
-						</tr>
-					</thead>
-                <tbody>
-				<?php	
-						$query = "SELECT * FROM Careers C WHERE C.category = 'Service'";
-						$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
-						if(!$result){
-							die('Coult not');
-						}
-						
-						while($row = mysqli_fetch_array($result)){
-							echo "<tr>";
-							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
-							echo "<td>".$row['bodyText']."</td>";
-							echo "<td>".$row['entryEdu']."</td>";
-							echo "</tr>";
-						}
-				?>
-                </tbody>
-				</table>	
+				<div id="service" class="table-responsive">
+					<table class="table table-hover" style="width:100%">
+						<caption><h4>Service</h4></caption>
+						<thead>
+							<tr>
+								<th style="padding-right: 150px">Careers</th>
+								<th class="disable-sorting"  >Description</th>
+								<th>Education</th>
+							</tr>
+						</thead>
+					<tbody>
+					<?php	
+							$query = "SELECT * FROM Careers C WHERE C.category = 'Service'";
+							$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
+							if(!$result){
+								die('Coult not');
+							}
+							
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+								echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
+								echo "<td>".$row['bodyText']."</td>";
+								echo "<td>".$row['entryEdu']."</td>";
+								echo "</tr>";
+							}
+					?>
+					</tbody>
+					</table>	
+				</div>
 					
 				<!-- Production -->	
-				<table class="table table-hover" id="production" style="width:100%">
-					<caption><h4>Production</h4></caption>
-					<thead>
-						<tr>
-							<th>Careers</th>
-							<th class="disable-sorting" style="width:90%">Description</th>
-							<th>Education</th>
-						</tr>
-					</thead>
-                <tbody>
-				<?php	
-						$query = "SELECT * FROM Careers C WHERE C.category = 'Production'";
-						$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
-						if(!$result){
-							die('Coult not');
-						}
-						
-						while($row = mysqli_fetch_array($result)){
-							echo "<tr>";
-							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
-							echo "<td>".$row['bodyText']."</td>";
-							echo "<td>".$row['entryEdu']."</td>";
-							echo "</tr>";
-						}
-				?>
-                </tbody>
-				</table>	
+				<div id="production" class="table-responsive">
+					<table class="table table-hover" style="width:100%">
+						<caption><h4>Production</h4></caption>
+						<thead>
+							<tr>
+								<th style="padding-right: 150px">Careers</th>
+								<th class="disable-sorting"  >Description</th>
+								<th>Education</th>
+							</tr>
+						</thead>
+					<tbody>
+					<?php	
+							$query = "SELECT * FROM Careers C WHERE C.category = 'Production'";
+							$result = mysqli_query($mysql_handle, $query) or die("Result ddie");
+							if(!$result){
+								die('Coult not');
+							}
+							
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+								echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
+								echo "<td>".$row['bodyText']."</td>";
+								echo "<td>".$row['entryEdu']."</td>";
+								echo "</tr>";
+							}
+					?>
+					</tbody>
+					</table>
+				</div>
 <?
 	mysql_close($mysql_handle);
 ?> 

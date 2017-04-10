@@ -1,10 +1,10 @@
 <?php
   // Define database connection constants
 	
-	$dbhost = 'mysql.cs.orst.edu';
-	$dbname = 'cs440_yeja';
-	$dbuser = 'cs440_yeja';
-	$dbpass = '5271';
+	$dbhost = 'oniddb.cws.oregonstate.edu';
+	$dbname = 'corbelld-db';
+	$dbuser = 'corbelld-db';
+	$dbpass = 'mKHNIf4DD3FkE08K';
 	
 	$mysql_handle = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
