@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/healthscience.css" rel="stylesheet">
+    <link href="css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
 
 <body>
 
-    <div class="brand">Oregon Health Science Careers</div>
+    <div class="brand"><img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -59,7 +59,7 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="careers.html">Careers</a>
+                        <a href="careers.php">Careers</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -110,8 +110,14 @@
 							echo 		"</p>";
 							echo "</div>";
 							echo "<div class='col-md-4 figure'>";
-							echo 		"<img class='center-block figure-img' src=".$row[img]." >";
-							echo 		"<figcaption class='figure-caption'>".$row['caption']."</figcaption";
+							echo 	"<div class='panel panel-default' style='margin-left:10%; margin-right:10%; background: #F0F0F0'>";
+							echo 		"<div class='panel-body'>";
+							echo 			"<figure class=' center-block' >";
+							echo 			"<img class='center-block img-responsive'  src=".$row[img]." >";
+							echo 			"<figcaption class='figure-caption' style='padding-top:5px; padding-right:8%; padding-left:8%;'>".$row['caption']."</figcaption";
+							echo			"</figure>";
+							echo  		"</div>";
+							echo 	"</div>";
 							echo "</div>";
 							echo "</div>";
 							
