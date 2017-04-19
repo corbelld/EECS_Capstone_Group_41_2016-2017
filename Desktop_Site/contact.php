@@ -1,3 +1,31 @@
+
+<?php 
+                        
+//contact variables
+$name = $_POST['firstlastname'];
+$phone =$_POST['phonenumber'];
+$email = $_POST['emailaddress'];
+$message = $_POST['message'];
+
+
+//prepare for email msg
+$from = $_POST['firstlastname']; 
+$to = 'fengzi@oregonstate.edu'; 
+$subject = ' "[".$sitename."]" inquiry';
+
+
+//submit and send confirmation 
+   if ($_POST['submit']) {
+    // if all is well build the message             
+        if (mail ($to, $subject, $message, $from)) { 
+            echo '<p class="confirmation">Thank you, '.$name.' Your message has been sent!</p>';
+    // if not well, display error message
+        } else { 
+        echo '<p class="tryagain">Something went wrong. Please try again.</p>'; 
+    }
+//provide error msg
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,8 +60,7 @@
 
 <body>
 
-
-    <div class="brand"> <img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
+    <div class="brand"><img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -82,18 +109,26 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">About
+                    <h2 class="intro-text text-center">Contact
                         <strong>Health Careers</strong>
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+                <div class="col-md-8">
+                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                    <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5872486.397637887!2d-125.02658570110478!3d44.053931978440524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54936e7c9b9f6a55%3A0x7d4c65db7a0bb876!2sOregon!5e0!3m2!1sen!2sus!4v1488354198531"></iframe>
                 </div>
-                <div class="col-md-6">
-                    <p>Filler text about Health Careers website</p>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <div class="col-md-4">
+                    <p>Phone:
+                        <strong>123.456.7890</strong>
+                    </p>
+                    <p>Email:
+                        <strong><a href="mailto:name@example.com">name@example.com</a></strong>
+                    </p>
+                    <p>Address:
+                        <strong>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</strong>
+                    </p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -103,30 +138,37 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Our
-                        <strong>Team</strong>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>form</strong>
                     </h2>
                     <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
+                    <form role="form" method ="post" action = "contact.php">
+                        <div class="row">
+                            <div class="form-group col-lg-4">
+                                <label>Name</label>
+                                <input type="text" name="firstlastname" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Email Address</label>
+                                <input type="email" name="emailaddress" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phonenumber" class="form-control">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group col-lg-12">
+                                <label>Message</label>
+                                <textarea class="form-control" name="message" rows="6"></textarea>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+                                <button name="submit" id="submit" type="submit" value="Send" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>John Smith
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>John Smith
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>John Smith
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="clearfix"></div>
             </div>
         </div>
 
@@ -152,7 +194,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 	<script>
-     
+	
 	 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -160,7 +202,6 @@
 
 	 ga('create', 'UA-93079620-1', 'auto');
 	 ga('send', 'pageview');
- 
 
 	</script>
     <!-- Bootstrap Core JavaScript -->
@@ -169,3 +210,4 @@
 </body>
 
 </html>
+                                
