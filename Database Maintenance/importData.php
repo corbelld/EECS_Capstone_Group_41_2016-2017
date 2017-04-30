@@ -18,25 +18,22 @@ if(isset($_POST['importSubmit'])){
             
             //parse data from csv file line by line
             while(($line = fgetcsv($csvFile)) !== FALSE){
-                //check whether Careers already exists in database with same careerID
+                //check whether careerID already exists in database with same careerID
                 $prevQuery = "SELECT careerID FROM Careers WHERE careerID = '".$line[0]."'";
                 $prevResult = $db->query($prevQuery);
                 if($prevResult->num_rows > 0){
                     //update member data
                     $db->query("UPDATE Careers SET careerID = '".$line[0]."', careerName = '".$line[1]."', entryEdu = '".$line[2]."', 
-                    compEdu = '".$line[3]."', category = '".$line[4]."', statistics = '".$line[5]."', bodyText = '".$line[6]."', 
-                    img = '".$line[7]."', caption = '".$line[8]."', url = '".$line[9]."'  
+                    compEdu = '".$line[3]."', category = '".$line[4]."', statistics = '".$line[5]."', bodyText = '".$line[6]."',
+					img = '".$line[7]."', caption = '".$line[8]."'   
                     WHERE careerID = '".$line[0]."' ");
                 }else
                 {
                     //insert Careers data into database
-					//url line[9] may or may not needed
-                    $db->query("INSERT INTO Careers (careerID, careerName, entryEdu, compEdu, category, statistics, bodyText, img, caption, url)
+                    $db->query("INSERT INTO Careers (careerID, careerName, entryEdu, compEdu, category, statistics, bodyText, img, caption)
                               VALUE ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[4]."','".$line[5]."','".$line[6]."',
-                              '".$line[7]."', '".$line[8]."', '".$line[9]."')");
-                              
-                   //$db->query("INSERT INTO members (name, email, phone, created, modified, status) 
-                   //VALUES ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[3]."','".$line[4]."')");
+							  '".$line[7]."','".$line[8]."')");
+                            
                 }
             }
             
