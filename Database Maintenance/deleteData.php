@@ -18,16 +18,16 @@ if(isset($_POST['importSubmit'])){
             
             //parse data from csv file line by line
             while(($line = fgetcsv($csvFile)) !== FALSE){
-                //check whether careerID already exists in database
+                //check whether oppID already exists in database with same careerID
                 $prevQuery = "SELECT careerID FROM Careers WHERE careerID = '".$line[0]."'";
                 $prevResult = $db->query($prevQuery);
                 if($prevResult->num_rows > 0){
                     //delete member data
-                    $db->query("DELETE FROM Careers, CareerLink, Opportunity
-							 WHERE careerID = '".$line[0]."' ");
+                    $db->query("DELETE * FROM Careers
+                    WHERE careerID = '".$line[0]."'");
                 }else
                 {
-                    echo "Career ID does not exist in the existing table."
+                   echo "Error!";
                             
                 }
             }
