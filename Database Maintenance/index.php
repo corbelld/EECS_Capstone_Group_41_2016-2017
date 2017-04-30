@@ -44,11 +44,10 @@ if(!empty($_GET['status'])){
                       <th>entryName</th>
                       <th>compEdu</th>
                       <th>category</th>
-					  <th>statistics</th>
+					            <th>statistics</th>
                       <th>bodyText</th>
                       <th>img</th>
                       <th>caption</th>
-					  <th>url</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,11 +62,10 @@ if(!empty($_GET['status'])){
                       <td><?php echo $row['entryName']; ?></td>
                       <td><?php echo $row['compEdu']; ?></td>
                       <td><?php echo $row['category']; ?></td>
-					  <td><?php echo $row['statistics']; ?></td>
+					            <td><?php echo $row['statistics']; ?></td>
                       <td><?php echo $row['bodyText']; ?></td>
-					  <td><?php echo $row['img']; ?></td>
+					            <td><?php echo $row['img']; ?></td>
                       <td><?php echo $row['caption']; ?></td>
-                      <td><?php echo $row['url']; ?></td>
                     </tr>
                     <?php } }else{ ?>
                     <tr><td colspan="5">No member(s) found.....</td></tr>

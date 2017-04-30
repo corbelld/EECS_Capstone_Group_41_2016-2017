@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //load the database configuration file
 include 'dbConfig.php';
 
@@ -18,21 +18,17 @@ if(isset($_POST['importSubmit'])){
             
             //parse data from csv file line by line
             while(($line = fgetcsv($csvFile)) !== FALSE){
-                //check whether school already exists in database with same schoolID
-                $prevQuery = "SELECT schoolID FROM Schools WHERE schoolID = '".$line[0]."'";
+                //check whether careerID already exists in database
+                $prevQuery = "SELECT careerID FROM Careers WHERE careerID = '".$line[0]."'";
                 $prevResult = $db->query($prevQuery);
                 if($prevResult->num_rows > 0){
-                    //update member data
-                    $db->query("UPDATE Schools SET schoolID = '".$line[0]."', schoolName = '".$line[1]."', url = '".$line[2]."'  
-                    WHERE schoolID = '".$line[0]."' ");
+                    //delete member data
+                    $db->query("DELETE FROM Careers, CareerLink, Opportunity
+							 WHERE careerID = '".$line[0]."' ");
                 }else
                 {
-                    //insert Schools data into database
-                    $db->query("INSERT INTO Schools (schoolID, schoolName, url)
-                              VALUE ('".$line[0]."','".$line[1]."','".$line[2]."')");
-                              
-                   //$db->query("INSERT INTO members (name, email, phone, created, modified, status) 
-                   //VALUES ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[3]."','".$line[4]."')");
+                    echo "Career ID does not exist in the existing table."
+                            
                 }
             }
             
@@ -49,4 +45,4 @@ if(isset($_POST['importSubmit'])){
 }
 
 //redirect to the listing page
-header("Location: indexSchools.php".$qstring);
+header("Location: indexDelete.php".$qstring);

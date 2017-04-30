@@ -118,7 +118,8 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th class="disable-sorting" align="text-center" style="width:90%">Description</th>
+							<th class="disable-sorting" style="width:90%">Description</th>
+							<th>Education</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -131,8 +132,9 @@
 						
 						while($row = mysqli_fetch_array($result)){
 							echo "<tr>";
-							echo "<td><a href=".$row['url']." >".$row['careerName']."</td>";
+							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
 							echo "<td>".$row['bodyText']."</td>";
+							echo "<td>".$row['entryEdu']."</td>";
 							echo "</tr>";
 						}
 				?>
@@ -146,7 +148,8 @@
 					<thead>
 						<tr>
 							<th>Careers</th>
-							<th alien="right" style="width:90%">Description</th>
+							<th class="disable-sorting" style="width:90%">Description</th>
+							<th>Education</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -159,8 +162,9 @@
 						
 						while($row = mysqli_fetch_array($result)){
 							echo "<tr>";
-							echo "<td><a href=".$row['url']." >".$row['careerName']."</td>";
+							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
 							echo "<td>".$row['bodyText']."</td>";
+							echo "<td>".$row['entryEdu']."</td>";
 							echo "</tr>";
 						}
 				?>
@@ -174,6 +178,7 @@
 						<tr>
 							<th>Careers</th>
 							<th class="disable-sorting" style="width:90%">Description</th>
+							<th>Education</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -186,8 +191,9 @@
 						
 						while($row = mysqli_fetch_array($result)){
 							echo "<tr>";
-							echo "<td><a href=".$row['url']." >".$row['careerName']."</td>";
+							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
 							echo "<td>".$row['bodyText']."</td>";
+							echo "<td>".$row['entryEdu']."</td>";
 							echo "</tr>";
 						}
 				?>
@@ -201,6 +207,7 @@
 						<tr>
 							<th>Careers</th>
 							<th class="disable-sorting" style="width:90%">Description</th>
+							<th>Education</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -213,8 +220,9 @@
 						
 						while($row = mysqli_fetch_array($result)){
 							echo "<tr>";
-							echo "<td><a href=".$row['url']." >".$row['careerName']."</td>";
+							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
 							echo "<td>".$row['bodyText']."</td>";
+							echo "<td>".$row['entryEdu']."</td>";
 							echo "</tr>";
 						}
 				?>
@@ -228,6 +236,7 @@
 						<tr>
 							<th>Careers</th>
 							<th class="disable-sorting" style="width:90%">Description</th>
+							<th>Education</th>
 						</tr>
 					</thead>
                 <tbody>
@@ -240,8 +249,9 @@
 						
 						while($row = mysqli_fetch_array($result)){
 							echo "<tr>";
-							echo "<td><a href=".$row['url']." >".$row['careerName']."</td>";
+							echo "<td style='padding-right: 20px'><a href=".$row['url']." >".$row['careerName']."</td>";
 							echo "<td>".$row['bodyText']."</td>";
+							echo "<td>".$row['entryEdu']."</td>";
 							echo "</tr>";
 						}
 				?>
@@ -260,14 +270,20 @@
     <!-- /.container -->
 	
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Oregon State Health Careers 2017</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+         <div class="footer-container">
+             <div class="row">
+                 <div class="footer-col-left text-center">
+                     <ul class="nav footer-navbar-left">
+                         <li class="menu-items" style="color: black"><a href="contact.html">Contact Us</a></li>
+                         <li class="menu-items"><a href="#">Term of Use</a></li>
+                     </ul>
+                     <ul class="nav footer-col-right">
+                         <li>&copy; 2017 Oregon Deparment of Eudcation</li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+      </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -284,6 +300,17 @@
     <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
 	
 	<script>
+	
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-93079620-1', 'auto');
+	ga('send', 'pageview');
+
+	
+	
     $(document).ready( function () {
         $('#healthcare').bdt({
             showSearchForm: 0,
