@@ -60,7 +60,7 @@ $subject = ' "[".$sitename."]" inquiry';
 
 <body>
 
-    <div class="brand"><img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
+<div class="brand"><a href ="index.html" style="text-decoration:none; color: #404040"> <img src= "img/logo.png" height="120" width="120" hspace="30" /> Oregon Health Science Careers</a></div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -120,14 +120,14 @@ $subject = ' "[".$sitename."]" inquiry';
                 </div>
                 <div class="col-md-4">
                     <p>Phone:
-                        <strong>123.456.7890</strong>
+                        <strong>XXX.XXX.XXXX</strong>
                     </p>
                     <p>Email:
                         <strong><a href="mailto:name@example.com">name@example.com</a></strong>
                     </p>
                     <p>Address:
-                        <strong>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210</strong>
+                        <strong>1234 Example St.
+                            <br>Salem, OR 97301</strong>
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -181,7 +181,6 @@ $subject = ' "[".$sitename."]" inquiry';
                  <div class="footer-col-left text-center">
                      <ul class="nav footer-navbar-left">
                          <li class="menu-items" style="color: black"><a href="contact.php">Contact Us</a></li>
-                         <li class="menu-items"><a href="#">Term of Use</a></li>
                      </ul>
                      <ul class="nav footer-col-right">
                          <li>&copy; 2017 Oregon Deparment of Eudcation</li>

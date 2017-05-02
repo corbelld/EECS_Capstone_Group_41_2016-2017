@@ -28,8 +28,12 @@ if(!empty($_GET['status'])){
     } ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            Members list
-            <a href="javascript:void(0);" onclick="$('#importFrm').slideToggle();">Import Members</a>
+            Navigation
+            <a href="index.php" style= "padding:20px">Import Career Path</a>
+			<a href="indexOpportunity.php" style= "padding:20px">Import Opportunities</a>
+			<a href="indexSchools.php" style= "padding:20px">Import Schools</a>
+			<a href="indexCareerLinks.php" style= "padding:20px">Import Career and Schools Link</a>
+			<a href="indexDelete.php" style= "padding:20px">Delete Career Path</a>
         </div>
         <div class="panel-body">
             <form action="importOpportunity.php" method="post" enctype="multipart/form-data" id="importFrm">
@@ -69,6 +73,6 @@ if(!empty($_GET['status'])){
     </div>
 </div>
 
-//<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-//<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-//<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

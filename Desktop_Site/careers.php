@@ -1,11 +1,6 @@
 <?php
 						//include connection variables
-						//include 'connectvarsEECS.php'; 
-
-							$dbhost = 'mysql.cs.orst.edu';
-							$dbname = 'cs440_yeja';
-							$dbuser = 'cs440_yeja';
-							$dbpass = '5271';
+						include 'connectvarsHC.php'; 
 
 						$mysql_handle = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 ?>
@@ -44,7 +39,7 @@
 
 <body>
 
-    <div class="brand"> <img src= "img/logo.png" height="120" width="120" hspace="30" />Oregon Health Science Careers</div>
+	<div class="brand"><a href ="index.html" style="text-decoration:none; color: #404040"> <img src= "img/logo.png" height="120" width="120" hspace="30" /> Oregon Health Science Careers</a></div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -285,7 +280,6 @@
                  <div class="footer-col-left text-center">
                      <ul class="nav footer-navbar-left">
                          <li class="menu-items" style="color: black"><a href="contact.php">Contact Us</a></li>
-                         <li class="menu-items"><a href="#">Term of Use</a></li>
                      </ul>
                      <ul class="nav footer-col-right">
                          <li>&copy; 2017 Oregon Deparment of Eudcation</li>

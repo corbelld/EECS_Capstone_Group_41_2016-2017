@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +63,7 @@
                         <a href="careers.php">Careers</a>
                     </li>
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a href="contact.html">Contact</a>
                     </li>
                     <li>
                         <a href="resources.html">Resources</a>
@@ -77,27 +78,121 @@
 	
     <div class="container">
         <div class="row">
-            <div class="box table-responsive">
+            <div class="box">
             
-			<table class="table table-hover">
-					<caption><h4>External Resources</h4></caption>
-					<thead>
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
-                <tbody>
-					<tr>
-						<td><a href="#">Example Resource</a></td>
-						<td style="padding-right: 20%">Example Description of Example Resource</td>
-					</tr>
-					<tr>
-						<td ><a href="#">Example Resource 2</a></td>
-						<td>Example Description of Example Resource 2</td>
-					</tr>
-                </tbody>
-				</table>	
+                    <!-- begin php section for career information query -->
+					<?php
+						//include connection variables
+						include 'connectvarsHC.php';
+							
+						$query = "SELECT * FROM Careers C, CareerLink L, Opportunity O WHERE C.careerID = 'pharmacist' AND L.careerID = 'pharmacist' AND O.careerID = 'pharmacist'"; 
+						//echo $query;
+						//echo $mysql_handle;
+						$result = mysqli_query($mysql_handle, $query) or die("Result die");
+						if(!$result){
+							die('Coult not');
+						}
+						
+
+							$row = mysqli_fetch_array($result);
+							echo "<div class='row'>";
+							echo "<div class='col-md-8'>";
+							echo "<hr>";
+							echo 	"<h1 class='intro-text text-center'>";
+							echo 		"<strong>";
+							echo 			$row['careerName'];
+							echo 		"</strong>";
+							echo 	"</h1>";
+							echo "</hr><br>";
+							echo 		"<p>";
+							echo 		$row['bodyText'];
+							echo 		"<br><br>";
+							echo 		$row['statistics'];
+							echo 		"</p>";
+							echo "</div>";
+							echo "<div class='col-md-4 figure'>";
+							echo 	"<div class='panel panel-default' style='margin-left:10%; margin-right:10%; background: #F0F0F0'>";
+							echo 		"<div class='panel-body'>";
+							echo 			"<figure class=' center-block' >";
+							echo 			"<img class='center-block img-responsive'  src=".$row[img]." >";
+							echo 			"<figcaption class='figure-caption' style='padding-top:5px; padding-right:8%; padding-left:8%;'>".$row['caption']."</figcaption";
+							echo			"</figure>";
+							echo  		"</div>";
+							echo 	"</div>";
+							echo "</div>";
+							echo "</div>";
+							
+							echo "<div class='row bot-buffer'>";
+							echo 	"<div class='col-md-5'>";
+							echo 	"<br>";
+							echo	"<h1 class='intro-text text-center'><strong>Colleges and Universities</strong></h1>";
+							echo    "<hr>";
+							
+							$queryschools = "SELECT * FROM Careers C, CareerLink L, Schools S WHERE C.careerID = 'pharmacist' AND L.careerID = 'pharmacist' AND S.schoolID=L.schoolID"; 
+						
+							$schools = mysqli_query($mysql_handle, $queryschools) or die("Result die");
+							if(!$schools){
+								die('Coult not');
+							}
+						
+							echo "<p class='text-center'>";
+							while($row2 = mysqli_fetch_array($schools)){  //Show Schools
+							echo "<a href=".$row2['url'].">".$row2['schoolName']."</a>";
+							echo "</br>";
+							}
+							echo "</p>";
+							echo "</div>";		
+							echo "</div>";				
+							
+							
+							//Row showing state and national opportunities
+							echo "<div class='row'>";
+							echo 	"<div class='col-md-5'>";
+							echo		"<h1 class='intro-text text-center'><strong>State Opportunities</strong></h1>";
+							echo    	"<hr>";
+							$querystate = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'pharmacist' AND O.careerID = 'pharmacist' AND O.oppType = 'Oregon'"; 
+						
+							$state = mysqli_query($mysql_handle, $querystate) or die("Result die");
+							if(!$state){
+								die('Coult not');
+							}
+							echo "<p class='text-center'>";
+							while($row3 = mysqli_fetch_array($state)){  //Show Schools
+								echo "<a href=".$row3['oppLink'].">".$row3['oppName']."</a>";
+								echo "</br>";
+							}
+							echo "</p>";
+							echo "</div>";		
+					
+							
+							
+							echo 	"<div class='col-md-6'>";
+							echo		"<h1 class='intro-text text-center'><strong>National Opportunities</strong></h1>";
+							echo    	"<hr>";
+							$querynat = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'pharmacist' AND O.careerID = 'pharmacist' AND O.oppType = 'National'"; 
+						
+							$nat = mysqli_query($mysql_handle, $querynat) or die("Result die");
+							if(!$nat){
+								die('Coult not');
+							}
+							echo "<p class='text-center'>";
+							while($row4 = mysqli_fetch_array($nat)){  //Show Schools
+								echo "<a href=".$row4['oppLink'].">".$row4['oppName']."</a>";
+								echo "</br>";
+							}	
+							echo "</p>";
+							echo "</div>";	
+							
+							echo 	"</div>";
+							
+							
+							echo "</div>";
+
+											
+						mysql_close($mysql_handle);
+					?> 
+					<!--  end php  -->
+                
                 
             </div>
         </div>
@@ -128,7 +223,7 @@
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	 ga('create', 'UA-93079620-1', 'auto');
+	 ga('create', 'UA-97186407-1', 'auto');
 	 ga('send', 'pageview');
 
 	
