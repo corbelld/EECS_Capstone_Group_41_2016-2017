@@ -1,0 +1,8 @@
+oppID,careerID,oppName,oppLink,oppType
+manBF,management,Medical and Health Services Managers,https://www.qualityinfo.org/te-oprof/?at=1&t1=Medical%20manager~119111~4101000000~0~true~true~true~true~true~true~true~true~true~true~true~true~true~none~0~1~1,State
+hthSW,professional,Social Workers,https://www.bls.gov/ooh/community-and-social-service/social-workers.htm,National
+chiPT,chiropactor,Chiropractors,https://www.qualityinfo.org/te-oprof/?at=1&t1=chiropractor~291011~4101000000~0~true~true~true~true~true~true~true~true~true~true~true~true~true~none~0~1~1,State
+denST,dentist,"Dentists, General",https://www.qualityinfo.org/jc-oprof/?at=1&t1=Dentist~291021~4101000000~2~true~false~true~true~false~true~false~true~false~true~true~false~false~none~0~1~1,State
+optMT,optometrist,Optometrists ,https://www.qualityinfo.org/jc-oprof/?at=1&t1=Optometrists~291041~4101000000~2~true~false~true~true~false~true~false~true~false~true~true~false~false~none~0~1~1,State
+phaMT,pharmacist,Pharmacists,https://www.bls.gov/ooh/healthcare/pharmacists.htm,National
+phySN,physcician,Physicians and Surgeons,https://www.bls.gov/ooh/healthcare/physicians-and-surgeons.htm#tab-1,National
