@@ -23,16 +23,35 @@ if(isset($_POST['importSubmit'])){
                 $prevResult = $db->query($prevQuery);
                 if($prevResult->num_rows > 0){
                     //update member data
+					$add = $line[0];
+					$add .= '.php';
                     $db->query("UPDATE Careers SET careerID = '".$line[0]."', careerName = '".$line[1]."', entryEdu = '".$line[2]."', 
                     compEdu = '".$line[3]."', category = '".$line[4]."', statistics = '".$line[5]."', bodyText = '".$line[6]."',
-					img = '".$line[7]."', caption = '".$line[8]."'   
+					img = '".$line[7]."', caption = '".$line[8]."', url = '".$add."   
                     WHERE careerID = '".$line[0]."' ");
                 }else
                 {
                     //insert Careers data into database
-                    $db->query("INSERT INTO Careers (careerID, careerName, entryEdu, compEdu, category, statistics, bodyText, img, caption)
+					$add = $line[0];
+					$add .= '.php';
+                    $db->query("INSERT INTO Careers (careerID, careerName, entryEdu, compEdu, category, statistics, bodyText, img, caption, url)
                               VALUE ('".$line[0]."','".$line[1]."','".$line[2]."','".$line[3]."','".$line[4]."','".$line[5]."','".$line[6]."',
-							  '".$line[7]."','".$line[8]."')");
+							  '".$line[7]."','".$line[8]."', '".$add."')");
+							  
+							  
+						$c = 'template.php';
+						$n = './pages/';
+						$n .= $add;
+						$r = 'TEMPLATE';
+						$p = $line[0];
+						$handle = fopen($c, 'r') or die ('Cannot open file');
+						$data = fread($handle,filesize($c));
+						$data2 = str_replace($r, $p, $data);
+						fclose($handle);
+						#echo $data2;
+						$handle2 = fopen($n, 'w') or die ('Cannot open file');
+						fwrite($handle2, $data2);
+						fclose($handle2);			  
                             
                 }
             }

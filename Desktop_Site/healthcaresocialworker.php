@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +33,7 @@
 
 <body>
 
-    <div class="brand">Oregon Health Science Careers</div>
+	<div class="brand"><a href ="index.html" style="text-decoration:none; color: #404040"> <img src= "img/logo.png" height="120" width="120" hspace="30" /> Oregon Health Science Careers</a></div>
     <div class="address-bar">[Filler Information]</div>
 
     <!-- Navigation -->
@@ -59,7 +60,7 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="careers.html">Careers</a>
+                        <a href="careers.php">Careers</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -84,7 +85,7 @@
 						//include connection variables
 						include 'connectvarsHC.php';
 							
-						$query = "SELECT * FROM Careers C, CareerLink L, Opportunity O WHERE C.careerID = 'chiropractics' AND L.careerID = 'chiropractics' AND O.careerID = 'chiropractics'"; 
+						$query = "SELECT * FROM Careers C, CareerLink L, Opportunity O WHERE C.careerID = 'healthcaresocialworker' AND L.careerID = 'healthcaresocialworker' AND O.careerID = 'healthcaresocialworker'"; 
 						//echo $query;
 						//echo $mysql_handle;
 						$result = mysqli_query($mysql_handle, $query) or die("Result die");
@@ -110,8 +111,14 @@
 							echo 		"</p>";
 							echo "</div>";
 							echo "<div class='col-md-4 figure'>";
-							echo 		"<img class='center-block figure-img' src=".$row[img]." >";
-							echo 		"<figcaption class='figure-caption'>".$row['caption']."</figcaption";
+							echo 	"<div class='panel panel-default' style='margin-left:10%; margin-right:10%; background: #F0F0F0'>";
+							echo 		"<div class='panel-body'>";
+							echo 			"<figure class=' center-block' >";
+							echo 			"<img class='center-block img-responsive'  src=".$row[img]." >";
+							echo 			"<figcaption class='figure-caption' style='padding-top:5px; padding-right:8%; padding-left:8%;'>".$row['caption']."</figcaption";
+							echo			"</figure>";
+							echo  		"</div>";
+							echo 	"</div>";
 							echo "</div>";
 							echo "</div>";
 							
@@ -121,7 +128,7 @@
 							echo	"<h1 class='intro-text text-center'><strong>Colleges and Universities</strong></h1>";
 							echo    "<hr>";
 							
-							$queryschools = "SELECT * FROM Careers C, CareerLink L, Schools S WHERE C.careerID = 'chiropractics' AND L.careerID = 'chiropractics' AND S.schoolID=L.schoolID"; 
+							$queryschools = "SELECT * FROM Careers C, CareerLink L, Schools S WHERE C.careerID = 'healthcaresocialworker' AND L.careerID = 'healthcaresocialworker' AND S.schoolID=L.schoolID"; 
 						
 							$schools = mysqli_query($mysql_handle, $queryschools) or die("Result die");
 							if(!$schools){
@@ -131,6 +138,7 @@
 							echo "<p class='text-center'>";
 							while($row2 = mysqli_fetch_array($schools)){  //Show Schools
 							echo "<a href=".$row2['url'].">".$row2['schoolName']."</a>";
+							echo "</br>";
 							}
 							echo "</p>";
 							echo "</div>";		
@@ -142,7 +150,7 @@
 							echo 	"<div class='col-md-5'>";
 							echo		"<h1 class='intro-text text-center'><strong>State Opportunities</strong></h1>";
 							echo    	"<hr>";
-							$querystate = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'chiropractics' AND O.careerID = 'chiropractics' AND O.oppType = 'Oregon'"; 
+							$querystate = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'healthcaresocialworker' AND O.careerID = 'healthcaresocialworker' AND O.oppType = 'Oregon'"; 
 						
 							$state = mysqli_query($mysql_handle, $querystate) or die("Result die");
 							if(!$state){
@@ -151,6 +159,7 @@
 							echo "<p class='text-center'>";
 							while($row3 = mysqli_fetch_array($state)){  //Show Schools
 								echo "<a href=".$row3['oppLink'].">".$row3['oppName']."</a>";
+								echo "</br>";
 							}
 							echo "</p>";
 							echo "</div>";		
@@ -160,7 +169,7 @@
 							echo 	"<div class='col-md-6'>";
 							echo		"<h1 class='intro-text text-center'><strong>National Opportunities</strong></h1>";
 							echo    	"<hr>";
-							$querynat = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'chiropractics' AND O.careerID = 'chiropractics' AND O.oppType = 'National'"; 
+							$querynat = "SELECT * FROM Careers C, Opportunity O WHERE C.careerID = 'healthcaresocialworker' AND O.careerID = 'healthcaresocialworker' AND O.oppType = 'National'"; 
 						
 							$nat = mysqli_query($mysql_handle, $querynat) or die("Result die");
 							if(!$nat){
@@ -169,6 +178,7 @@
 							echo "<p class='text-center'>";
 							while($row4 = mysqli_fetch_array($nat)){  //Show Schools
 								echo "<a href=".$row4['oppLink'].">".$row4['oppName']."</a>";
+								echo "</br>";
 							}	
 							echo "</p>";
 							echo "</div>";	
@@ -195,8 +205,7 @@
              <div class="row">
                  <div class="footer-col-left text-center">
                      <ul class="nav footer-navbar-left">
-                         <li class="menu-items" style="color: black"><a href="contact.html">Contact Us</a></li>
-                         <li class="menu-items"><a href="#">Term of Use</a></li>
+                         <li class="menu-items" style="color: black"><a href="contact.php">Contact Us</a></li>
                      </ul>
                      <ul class="nav footer-col-right">
                          <li>&copy; 2017 Oregon Deparment of Eudcation</li>
@@ -214,7 +223,7 @@
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	 ga('create', 'UA-93079620-1', 'auto');
+	 ga('create', 'UA-97186407-1', 'auto');
 	 ga('send', 'pageview');
 
 	

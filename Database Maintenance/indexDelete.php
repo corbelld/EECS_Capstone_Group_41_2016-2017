@@ -28,8 +28,12 @@ if(!empty($_GET['status'])){
     } ?>
   <div class="panel panel-default">
     <div class="panel-heading">
-      Members list
-      <a href="javascript:void(0);" onclick="$('#importFrm').slideToggle();">Import Members</a>
+			Navigation
+            <a href="index.php" style= "padding:20px">Import Career Path</a>
+			<a href="indexOpportunity.php" style= "padding:20px">Import Opportunities</a>
+			<a href="indexSchools.php" style= "padding:20px">Import Schools</a>
+			<a href="indexCareerLinks.php" style= "padding:20px">Import Career and Schools Link</a>
+			<a href="indexDelete.php" style= "padding:20px">Delete Career Path</a>
     </div>
     <div class="panel-body">
       <form action="deleteData.php" method="post" enctype="multipart/form-data" id="importFrm">
