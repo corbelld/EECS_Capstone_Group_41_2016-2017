@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Requirements Document}{4}
+\contentsline {subsection}{\numberline {2.1}Original Requirements Document Draft}{4}
+\contentsline {subsection}{\numberline {2.2}Client Requirements Document Changes}{12}
+\contentsline {subsection}{\numberline {2.3}Gantt Chart Changes}{12}
+\contentsline {section}{\numberline {3}Design Document}{13}
+\contentsline {subsection}{\numberline {3.1}Original Design Document Draft}{13}
+\contentsline {subsection}{\numberline {3.2}Design Document Changes}{30}
+\contentsline {section}{\numberline {4}Technology Review}{31}
+\contentsline {subsection}{\numberline {4.1}Technology Review Document}{31}
+\contentsline {subsection}{\numberline {4.2}Technology Review Changes}{47}
+\contentsline {section}{\numberline {5}Team Member Weekly Blog Posts}{48}
+\contentsline {subsection}{\numberline {5.1}Fall Term}{48}
+\contentsline {subsection}{\numberline {5.2}Winter Term}{51}
+\contentsline {subsection}{\numberline {5.3}Spring Term}{55}
+\contentsline {section}{\numberline {6}Final Poster}{61}
+\contentsline {section}{\numberline {7}Project Documentation}{62}
+\contentsline {subsection}{\numberline {7.1}Usage and Maintenance Guide}{62}
+\contentsline {subsection}{\numberline {7.2}Mobile Application Installation}{95}
+\contentsline {subsection}{\numberline {7.3}Theory of Operation}{95}
+\contentsline {section}{\numberline {8}Learned Technology}{96}
+\contentsline {subsection}{\numberline {8.1}New Technologies}{96}
+\contentsline {subsection}{\numberline {8.2}Useful References}{96}
+\contentsline {section}{\numberline {9}Individual Learning}{98}
+\contentsline {subsection}{\numberline {9.1}David Corbelli}{98}
+\contentsline {subsection}{\numberline {9.2}Zixuan Feng}{99}
+\contentsline {subsection}{\numberline {9.3}Jason Ye}{99}
+\contentsline {section}{\numberline {10}Appendix 1: Code Listing}{101}
+\contentsline {subsection}{\numberline {10.1}Email Contact Implementation}{101}
+\contentsline {subsection}{\numberline {10.2}Android Application Viewport Redirection}{101}
+\contentsline {subsection}{\numberline {10.3}Database Connection Variables}{103}
+\contentsline {subsection}{\numberline {10.4}File Parsing}{103}
+\contentsline {subsection}{\numberline {10.5}Uploading to Database}{104}
+\contentsline {section}{\numberline {11}Appendix 2: Additional Images}{105}
